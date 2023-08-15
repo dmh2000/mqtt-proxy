@@ -4,10 +4,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.MQTT_HTTP_PORT;
+var req_count = 0;
 
 app.get('/', (req : Request, res : Response) => {
-  res.send('Express + TypeScript Server');
+  req_count++;
+  console.log(req_count);
+  res.send(req_count.toString());
 });
 
 app.listen(port, () => {
