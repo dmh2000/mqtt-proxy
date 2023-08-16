@@ -1,3 +1,5 @@
 go 1.21.0
 
 use ./mqtt-reverse-proxy
+use ./m1
+use ./mqttlib
